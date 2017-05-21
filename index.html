@@ -20,11 +20,48 @@
 	position:relative;
     left:100px;
     top:50px;
-    border:2px red solid;">relative position</div>
+    border:2px red solid;">
+    relative position
+    <div style="width:50px;
+    height:50px;
+	position:absolute;
+    left:25px;
+    top:25px;
+    border:2px red solid;">absolute top:25 left:25</div>
+</div>
 <div style="background-color:red;width:50px;height:50px;float:left;">float left</div>
 <p>---------------------------------------------------------------------------------------------------------</p>
+<p style="font-family: 华文楷体">华文楷体+Yu Gothic(华文楷体)</p>
+<p style="font-family:Yu Gothic">华文楷体+Yu Gothic(Yu Gothic)</p>
+<!--如果字体华文楷体不存在，则用Yu Gothic字体-->
+<p style="font-family: 华文楷体, Yu Gothic">华文楷体+Yu Gothic(华文楷体, Yu Gothic)</p>
+<p style="font-family: 华文体, Yu Gothic">华文楷体+Yu Gothic(华文体, Yu Gothic)</p>
+<p>华文楷体+Yu Gothic(none)</p>
+<p>---------------------------------------------------------------------------------------------------------</p>
+<p>不定宽块状元素居中</p>
+
+<table style="margin: 0 auto">
+    <td>
+        1. 将元素放入table>td标签中，然后设置table的margin:0 auto这是因为table的宽度等于其内容的长度，即可以看做一个定宽的元素，从而进行定宽块的居中方法
+    </td>
+</table>
+<div style="text-align: center">
+    <p style="display: inline;">
+        2. 设置元素为inline类型，后设置其父元素```text-aline:center```
+    </p>
+</div>
+<div style="position: relative;margin-left: 50%">
+    <p style="position: absolute;left:-50%;">
+        3. 父元素：position:relitive;margin-left:50%;子元素：position:absolute;left:-50%;
+    </p>
+</div>
 
 
 
+
+
+
+
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 </body>
 </html>

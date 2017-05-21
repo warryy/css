@@ -108,9 +108,52 @@ h1{
     其最接近的一个具有定位属性(position:relative)的父包含块进行绝对定位。如果不存在
     这样的包含块，则相对于body元素，即相对于浏览器窗口。</p>
     </li>
-    <li>相对定位(position: relative)</li>
-    <li>固定定位(position: fixed)</li>
+    <li>相对定位(position: relative)
+    <p>它通过left、right、top、bottom属性确定元素在正常文档流中的偏移位置。相对定位完成的过程是首先按static(float)方式生成一个元素(并且元素像层一样浮动了起来)，然后相对于以前的位置移动，移动的方向和幅度由left、right、top、bottom属性确定，偏移前的位置保留不动。</p>
+    </li>
+    <li>固定定位(position: fixed)
+    <p>表示固定定位，与absolute定位类型类似，但它的相对移动的坐标是视图（屏幕内的网页窗口）本身。</p>
+    </li>
 </ol>
+
+**字体缩写：**
+
+```
+body{
+    font-size:12px;
+    font-family:"宋体",sans-serif；
+    font-style:italic;//字体样式为斜体
+    font-variant:small-caps; //把段落设置为小型大写字母字体：(variant转化)
+    font-weight:bold;
+    line-height:1.5em;//1.5倍字体大小
+}
+```
+上述代码可以缩写为一句：
+```
+body{
+    font:italic  small-caps  bold  12px/1.5em  "宋体",sans-serif;
+}
+```
+
+注意：
+<ol>
+    <li>在所写的时候至少要填写font-size和font-family两个属性</li>
+    <li>font-size和line-height要用'/'隔开</li>
+</ol>
+
+常用情况(只有字体、行间距、中文字体、英文字体设置)：
+```
+body{
+    font:12px/1.5em "宋体",sans-serif;
+}
+```
 
 #### <a name="style">2.样式布局</a>
 
+**不定宽块状元素居中方法：**
+
+1. 将元素放入table>td标签中，然后设置table的```margin:0 auto```这是因为table的宽度等于其内容的长度，即可以看做一个定宽的元素，从而进行定宽块的居中方法
+2. 设置元素为inline类型，后设置其父元素```text-aline:center```
+3. 父元素：```position:relitive;margin-left:50%;```子元素：```position:absolute;left:-50%;```
+
+**垂直居中方法：**
