@@ -1,7 +1,7 @@
 ## 学习css页面布局
 #### [1 基础](#base)
 #### [2 样式布局](#style)
-#### <span id='base'>1.基础<span/>
+#### <a name='base'>1.基础</a>
 **子选择器：**
 .food>li{border:1px solid red;}
 只选择food的一级子标签li而对其孙子没有影响
@@ -112,5 +112,5 @@ h1{
     <li>固定定位(position: fixed)</li>
 </ol>
 
-#### <span id="style">2.样式布局<span/>
+#### <a name="style">2.样式布局</a>
 
