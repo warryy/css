@@ -157,3 +157,18 @@ body{
 3. 父元素：```position:relitive;margin-left:50%;```子元素：```position:absolute;left:-50%;```
 
 **垂直居中方法：**
+
+1. 父元素高度确定的单行文本：父元素line-height＝height
+2. 父元素高度确定的多行文本：
+
+> 将元素放在table>tbody>tr>td中,td相当于父元素;
+> 将元素设置为display:table-cell类型，激活其vertical-align属性并设置其为:middle.
+
+**隐性改变display类型:**
+
+当元素设置为以下两种情况的时候:
+
+1. position:absolute
+2. float:left or right
+
+元素会默认设置成：display:inline-block类型</p>
