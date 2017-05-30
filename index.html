@@ -15,6 +15,9 @@
     <dd>(dd)以视觉方式显示信息的装置 ... ...</dd>
 </dl>
 <p>---------------------------------------------------------------------------------------------------------</p>
+
+<h2>相对定位与绝对定位</h2>
+
 <div style="border: solid 1px #f00">
     <div style="width:100px;
     height:100px;
@@ -71,7 +74,7 @@
     border:2px red solid;">
 
         <!--这里加了一个空格，就会换行-->
-        relativeposition(100*100) left:100top:50display:inline(default)
+        position:relative(100*100) left:100top:50display:inline(default)
 
         <div style="width:50px;
     height:50px;
@@ -112,11 +115,11 @@
     </p>
 </div>
 
+
 <div style="width: 30px;height: 250px;background: #ccc">用于分开上下div的div</div>
 
 <div style="width: 500px;height: 200px;border: 1px solid #f00;position:relative;">
-    <span style="color:#ff0000; border: 1px solid #f00;position:absolute;left: 50%;-webkit-transform: translate(-50%,0);-moz-transform: translate(-50%,0);-ms-transform: translate(-50%,0);-o-transform: translate(-50%,0);transform: translate(-50%,0);">
-        div:relative;
+    <span style="color:#ff0000; border: 1px solid #f00;position:absolute;left: 50%;-webkit-transform: translate(-50%,0);-moz-transform: translate(-50%,0);-ms-transform: translate(-50%,0);-o-transform: translate(-50%,0);transform: translate(-50%,0);text-align: center">
         span:absolute;left50%;transform:translate(-50%,0)(IE9+)
     </span>
     position:relative
