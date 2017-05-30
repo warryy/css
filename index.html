@@ -15,21 +15,77 @@
     <dd>(dd)以视觉方式显示信息的装置 ... ...</dd>
 </dl>
 <p>---------------------------------------------------------------------------------------------------------</p>
-<div style="width:100px;
+<div style="border: solid 1px #f00">
+    <div style="width:100px;
     height:100px;
 	position:relative;
+	display: inline-block;
     left:100px;
     top:50px;
     border:2px red solid;">
-    relative position
-    <div style="width:50px;
+
+        <!--这里加了一个空格，就会换行-->
+        relativeposition(100*100) left:100top:50display:inlineblock
+
+        <div style="width:50px;
     height:50px;
 	position:absolute;
-    left:25px;
-    top:25px;
-    border:2px red solid;">absolute top:25 left:25</div>
+    left:40px;
+    top:40px;
+    border:2px red solid;">absolute(50*50) top:40 left:40</div>
+    </div>
+    <div style="background-color:red;width:50px;height:50px;float:left;">float left</div>
 </div>
-<div style="background-color:red;width:50px;height:50px;float:left;">float left</div>
+
+<div style="border: solid 1px #f00">
+    <div style="width:100px;
+    height:100px;
+	position:relative;
+	display: block;
+    left:100px;
+    top:50px;
+    border:2px red solid;">
+
+        <!--这里加了一个空格，就会换行-->
+        relativeposition(100*100) left:100top:50display:inlineblock(default)
+
+        <div style="width:50px;
+    height:50px;
+	position:absolute;
+    left:40px;
+    top:40px;
+    border:2px red solid;">absolute(50*50) top:40 left:40</div>
+    </div>
+    <div style="background-color:red;width:50px;height:50px;float:left;">float left</div>
+</div>
+
+<div style="width: 30px;height: 250px;background: #ccc">用于分开上下div的div</div>
+
+<div style="border: solid 1px #f00">
+    <div style="width:100px;
+    height:100px;
+	position:relative;
+	display: inline;
+    left:100px;
+    top:50px;
+    border:2px red solid;">
+
+        <!--这里加了一个空格，就会换行-->
+        relativeposition(100*100) left:100top:50display:inline(default)
+
+        <div style="width:50px;
+    height:50px;
+	position:absolute;
+    left:40px;
+    top:40px;
+    border:2px red solid;">absolute(50*50) top:40 left:40</div>
+    </div>
+    <div style="background-color:red;width:50px;height:50px;float:left;">float left</div>
+    试想象一下这里为什么没有内容的时候也会有一个有高度的空白父div,而且高度是怎样成为这样的
+</div>
+
+<div style="width: 30px;height: 250px;background: #ccc">用于分开上下div的div</div>
+
 <p>---------------------------------------------------------------------------------------------------------</p>
 <p style="font-family: 华文楷体">华文楷体+Yu Gothic(华文楷体)</p>
 <p style="font-family:Yu Gothic">华文楷体+Yu Gothic(Yu Gothic)</p>
@@ -38,31 +94,37 @@
 <p style="font-family: 华文体, Yu Gothic">华文楷体+Yu Gothic(华文体, Yu Gothic)</p>
 <p>华文楷体+Yu Gothic(none)</p>
 <p>---------------------------------------------------------------------------------------------------------</p>
-<p>不定宽块状元素居中</p>
+<h2>不定宽块状元素居中</h2>
 
-<table style="margin: 0 auto">
-    <td>
+<table style="margin: 0 auto;border: 1px solid #f00;">
+    <td style="border: 1px solid #f00;">
         1. 将元素放入table>td标签中，然后设置table的margin:0 auto这是因为table的宽度等于其内容的长度，即可以看做一个定宽的元素，从而进行定宽块的居中方法
     </td>
 </table>
-<div style="text-align: center">
-    <p style="display: inline;">
+<div style="text-align: center;border: 1px solid #f00;">
+    <p style="display: inline;border: 1px solid #f00;">
         2. 设置元素为inline类型，后设置其父元素```text-aline:center```
     </p>
 </div>
-<div style="position: relative;margin-left: 50%">
-    <p style="position: absolute;left:-50%;">
-        3. 父元素：position:relitive;margin-left:50%;子元素：position:absolute;left:-50%;
+<div style="position: relative;margin-left: 50%;border: 1px solid #f00;">
+    <p style="position: absolute;left:-50%;border: 1px solid #f00;">
+        3. 父元素：position:relative;margin-left:50%;子元素：position:absolute;left:-50%;
     </p>
 </div>
 
-<div style="width: 500px;height: 200px;border: 1px solid #f00;">
-    <span>asdf</span>
+<div style="width: 30px;height: 250px;background: #ccc">用于分开上下div的div</div>
+
+<div style="width: 500px;height: 200px;border: 1px solid #f00;position:relative;">
+    <span style="color:#ff0000; border: 1px solid #f00;position:absolute;left: 50%;-webkit-transform: translate(-50%,0);-moz-transform: translate(-50%,0);-ms-transform: translate(-50%,0);-o-transform: translate(-50%,0);transform: translate(-50%,0);">
+        div:relative;
+        span:absolute;left50%;transform:translate(-50%,0)(IE9+)
+    </span>
+    position:relative
 </div>
 
 <p>---------------------------------------------------------------------------------------------------------</p>
 
-<p>父元素高度确定的多行文本垂直居中</p>
+<h2>父元素高度确定的多行文本垂直居中</h2>
 <table>
     <tbody>
     <tr>
@@ -79,9 +141,36 @@
 
 <p>---------------------------------------------------------------------------------------------------------</p>
 
+<h2>父元素高度确定的div垂直居中</h2>
+<p>---------------------------------------------------------------------------------------------------------</p>
 
+<div style="width: 300px; height: 200px; background-color: #f00">
+    <div style="width: 200px; height: 100px; background-color: #ccc;margin: 50% auto 0;transform: translateY(-50%)">
+        对比图一
+    </div>
+</div>
 
+<p>---------------------------------------------------------------------------------------------------------</p>
 
+<div style="width: 300px; height: 200px; background-color: #f00;border: 1px solid #000;">
+    <div style="width: 200px; height: 100px; background-color: #ccc;margin: 50% auto 0;transform: translateY(-50%)">
+        对比图二
+        上下两个的唯一区别在于下面红色父div设置了border: 1px solid #000;<em>原因未知</em>
+    </div>
+</div>
+<p>
+    此处设置的为灰色块 margin 50% auto 0,transform:translateY(-50%),但是为什么没有垂直居中，原因是灰色块的 margin 值的百分比是相对于红色块的高来设置的．包括 margin-top 和 margin-bottom
+</p>
+<p>---------------------------------------------------------------------------------------------------------</p>
+
+<h2>flex box的居中</h2>
+
+<div style="width: 300px;height: 200px;border: 1px solid #000; display: flex;">
+    <!--此处align-items设置垂直居中-->
+        <div style="width: 200px;height: 80px;background: #f00;margin: auto; display: flex;align-items: center;justify-content: center">
+        flexbox
+    </div>
+</div>
 
 <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 </body>

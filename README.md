@@ -1,4 +1,4 @@
-## 学习css页面布局
+## 学习 css 页面布局
 #### [1 基础](#base)
 #### [2 样式布局](#style)
 #### <a name='base'>1.基础</a>
@@ -103,13 +103,13 @@ h1{
 三种形式：
 <ol>
     <li>绝对定位(position: absolute)
-    <p>如果想为元素设置层模型中的绝对定位，需要设置position:absolute(表示绝对定位)，
-    这条语句的作用将元素从文档流中拖出来，然后使用left、right、top、bottom属性相对于
+    <p>如果想为元素设置层模型中的绝对定位，需要设置 position:absolute (表示绝对定位)，
+    这条语句的作用将元素从文档流中拖出来，然后使用 left、right、top、bottom 属性相对于
     其最接近的一个具有定位属性(position:relative)的父包含块进行绝对定位。如果不存在
-    这样的包含块，则相对于body元素，即相对于浏览器窗口。</p>
+    这样的包含块，则相对于 body 元素，即相对于浏览器窗口。</p>
     </li>
     <li>相对定位(position: relative)
-    <p>它通过left、right、top、bottom属性确定元素在正常文档流中的偏移位置。相对定位完成的过程是首先按static(float)方式生成一个元素(并且元素像层一样浮动了起来)，然后相对于以前的位置移动，移动的方向和幅度由left、right、top、bottom属性确定，偏移前的位置保留不动。</p>
+    <p>它通过 left、right、top、bottom 属性确定元素在正常文档流中的偏移位置。相对定位完成的过程是首先按 static(float) 方式生成一个元素(并且元素像层一样浮动了起来)，然后相对于以前的位置移动，移动的方向和幅度由left、right、top、bottom属性确定，偏移前的位置保留不动。</p>
     </li>
     <li>固定定位(position: fixed)
     <p>表示固定定位，与absolute定位类型类似，但它的相对移动的坐标是视图（屏幕内的网页窗口）本身。</p>
@@ -150,25 +150,33 @@ body{
 
 #### <a name="style">2.样式布局</a>
 
-**不定宽块状元素居中方法：**
+**不定宽块状元素水平居中方法：**
 
-1. 将元素放入table>td标签中，然后设置table的```margin:0 auto```这是因为table的宽度等于其内容的长度，即可以看做一个定宽的元素，从而进行定宽块的居中方法
-2. 设置元素为inline类型，后设置其父元素```text-aline:center```
-3. 父元素：```position:relitive;margin-left:50%;```子元素：```position:absolute;left:-50%;```
+1. 将元素放入 table>td 标签中，然后设置 table 的 ```margin:0 auto``` 这是因为 table 的宽度等于其内容的长度，即可以看做一个定宽的元素，从而进行定宽块的居中方法
+2. 设置元素为inline类型，后设置其父元素 ```text-aline:center```
+3. 父元素： ```position:relative;margin-left:50%;``` 子元素: ```position:absolute;left:-50%;```
+4. 父元素位置不变 ```position:relative;``` 子元素: ```position:absolute;left:50%;transform:translate(50%,0)```
+此处也可用 css3 简写为 ```position:absolute;left:calc(50%, -50%);```
 
 **垂直居中方法：**
 
-1. 父元素高度确定的单行文本：父元素line-height＝height
+1. 父元素高度确定的单行文本：父元素 line-height＝height
 2. 父元素高度确定的多行文本：
 
-> 将元素放在table>tbody>tr>td中,td相当于父元素;
-> 将元素设置为display:table-cell类型，激活其vertical-align属性并设置其为:middle.
+> 将元素放在 table>tbody>tr>td 中, td 相当于父元素;
+> 将元素设置为 display:table-cell 类型，激活其 vertical-align 属性并设置其为 middle.
 
-**隐性改变display类型:**
+3. 相对于视图的居中方法： ```margin: 50vh auto 0;transform:translateY(-50%, 0);```
+
+**flexbox居中：**
+
+将父元素设置为: ```display:flex``` 子元素： ```margin:auto```
+
+**隐性改变 display 类型:**
 
 当元素设置为以下两种情况的时候:
 
 1. position:absolute
 2. float:left or right
 
-元素会默认设置成：display:inline-block类型</p>
+元素会默认设置成： display:inline-block 类型
