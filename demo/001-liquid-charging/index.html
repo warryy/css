@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="view-report" content=""width=device-width, init-scale=1.0, userscalable=no">
+    <title>001-liquid-charging</title>
+    <link rel="stylesheet" href="./index.css">
+  </head>
+  
+  <body>
+    <h3 class="h3">20s 充满电</h3>
+    <div class="charging">
+      <div class="mask"></div>
+    </div>
+    <button class="button">断电</button>
+    <ul class="ul">
+      <h4>用到的知识点</h4>
+      <ol>
+        <h4>animate 属性的 8 个参数(按照顺序来介绍): </h4>
+        <li>animation-duration: 动画执行的时间</li>
+        <li>animation-timing-function: 动画执行的时间函数</li>
+        <li>animation-delay: 动画执行的延迟函数</li>
+        <li>animation-iteration-count: 动画重复执行的次数</li>
+        <li>animation-direction: 动画执行的方向: normal, reverse, alternate</li>
+        <li>animation-fill-mode: 动画开始和结束时, 动画对象的状态</li>
+        <li>animation-play-state: 动画播放状态: paused, running</li>
+        <li>animation-name: 动画名称</li>
+      </ol>
+    </ul>
+    <script>
+      (function handleClick() {
+        let isCharging = true
+        let jsMask = document.querySelector('.mask')
+        let jsBtn = document.querySelector('.button')
+        jsBtn.addEventListener('click', () => {
+          isCharging = !isCharging
+          let val = 'animation-play-state: ' + (isCharging ? 'running' : 'paused')
+          jsMask.setAttribute('style', val)
+          jsBtn.innerHTML = isCharging ? '断电' : '充电' 
+        })
+      })()
+    </script>
+  </body>
+
+</html>
